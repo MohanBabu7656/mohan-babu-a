@@ -1,0 +1,21 @@
+{
+  "emulators": {
+    "apphosting": {
+      "port": 4200,
+      "rootDirectory": "/home/user/mohan-babu-a/"
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4200
+    }
+  },
+  "hosting": {
+    "public": "dist/Mohan-Babu-Asanapuram/browser",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

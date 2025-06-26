@@ -1,0 +1,31 @@
+/* Styles for the main application layout */
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the layout takes at least the full viewport height */
+  }
+  
+  app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; /* Ensure the header is above the content */
+  }
+  
+  .content-container {
+    flex-grow: 1; /* Allow the content to take up the remaining space */
+    overflow-y: auto; /* Enable vertical scrolling for the content */
+    padding-top: /* adjust based on your header height */; /* Add padding to prevent content from being hidden by the fixed header */
+    padding-bottom: 60px; /* Add padding to prevent content from being hidden by the fixed footer */
+    padding-top: 30px;
+  }
+  
+  app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; /* Ensure the footer is above the content */
+  }
+  

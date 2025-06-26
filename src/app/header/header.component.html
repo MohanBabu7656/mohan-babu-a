@@ -1,0 +1,23 @@
+<header>
+  <div class="header-content">
+    <div class="site-title">
+ <span class="key" *ngFor="let char of getUsernameCharacters(); let i = index" [style.animation-delay]="i * 0.05 + 's'">{{ char }}</span>
+ </div>
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <span class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+    <nav class="header-nav" [class.open]="isMenuOpen">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="assets/Mohan_Babu_Asanapuram_resume (1).pdf" (click)="confirmDownload($event)">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

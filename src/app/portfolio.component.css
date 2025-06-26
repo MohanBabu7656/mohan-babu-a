@@ -1,0 +1,635 @@
+.portfolio-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px;
+  /* Increased max-width */
+  margin: 40px auto;
+  /* Adjusted margin */
+  padding: 20px 20px 0 20px;
+  /* Adjusted padding and added top margin */
+}
+
+.header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.header h2 {
+  margin: 5px 0;
+  color: #555;
+  font-weight: normal;
+}
+
+.contact-info {
+  margin-top: 10px;
+}
+
+mat-card {
+  margin-bottom: 20px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+  background-color: var(--card-background-color);
+  /* height: 100vh; Fixed height to viewport height */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
+/* Ensure about-me-card is a flex container */
+/* .about-me-card { display: flex; } Remove this comment if needed */
+.about-me-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1s ease-in;
+}
+
+
+
+.about-image {
+  width: 150px;
+  /* Adjust size as needed */
+  height: 150px;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  margin-right: 20px;
+  /* Space between image and text */
+  object-fit: cover;
+  /* Ensures the image covers the area without distortion */
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-info mat-icon {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Image styles */
+/* Image styles */
+@media (max-width: 768px) {
+  .about-image {
+    width: 150px; /* Keep a fixed size or use consistent units */
+    height: 150px; /* Ensure height is equal to width */
+    border-radius: 50%; /* Maintain circle shape */
+    margin-bottom: 15px;
+    /* Space between image and name/title */
+    object-fit: cover; /* Ensure image covers the area */
+  }
+}
+
+h3 {
+  color: var(--primary-color);
+  /* Use primary color variable */
+  border-bottom: 2px solid var(--border-color);
+  /* Use border color variable */
+  padding-bottom: 8px;
+  /* Adjusted padding */
+  margin-bottom: 10px;
+}
+
+section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Keeping the border-bottom for sections within the card */
+section:last-child {
+  border-bottom: none;
+}
+
+.edu-item h4,
+.exp-item h4,
+.project-item h4 {
+  margin: 0 0 5px 0;
+  color: var(--text-color);
+  /* Use text color variable */
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+ul li {
+  margin-bottom: 5px;
+  color: var(--secondary-text-color);
+  /* Use secondary text color variable */
+}
+
+.skills-list h4 {
+  margin-bottom: 5px;
+  color: var(--text-color);
+  /* Use text color variable */
+}
+
+.skills-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list ul li {
+  display: inline-block;
+  background-color: var(--background-color);
+  /* Use background color variable */
+  padding: 5px 10px;
+  margin: 0 5px 5px 0;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Color Palette */
+/* Color Palette */
+:root {
+  --primary-color: #1a73e8; /* A vibrant blue */
+  --secondary-color: #34a853; /* A fresh green */
+  --accent-color: #fbbc05; /* A warm yellow */
+  --text-color: #202124; /* Dark gray for main text */
+  --secondary-text-color: #5f6368; /* Medium gray for secondary text */
+  --border-color: #dadce0; /* Light gray for borders */
+  --background-color: #f8f9fa; /* Light gray background */
+  --card-background-color: #ffffff; /* White for card backgrounds */
+  --card-hover-shadow: rgba(60, 64, 67, 0.15); /* Subtle shadow on hover */
+}
+
+
+/* Base Styles */
+.portfolio-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px 20px 0 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 5px 0;
+}
+
+h3 {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  color: var(--text-color);
+  margin: 0 0 5px 0;
+}
+
+p {
+  line-height: 1.6;
+  color: var(--secondary-text-color)
+}
+
+/* Contact Info */
+.contact-info {
+  margin-top: 10px;
+}
+
+.contact-info p {
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--secondary-text-color);
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-info mat-icon {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Card Styles */
+mat-card {
+  margin-bottom: 20px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+  background-color: rgb(194, 202, 201);
+  /* height: 100vh; Fixed height to viewport height */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
+mat-card:hover {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* Section Styles */
+section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* List Styles */
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+ul li {
+  margin-bottom: 5px;
+  color: var(--secondary-text-color);
+}
+
+/* Skills List */
+.skills-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list ul li {
+  display: inline-block;
+  background-color: var(--border-color);
+  /* Use background color variable */
+  padding: 5px 10px;
+  margin: 0 5px 5px 0;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: var(--text-color)
+}
+
+.skill-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  /* Adjust card width as needed */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Add padding to the skill card itself */
+  padding: 20px;
+}
+
+.skill-card h4 {
+  margin-top: 0;
+  flex-shrink: 0;
+  /* Prevent shrinking */
+  margin-right: 20px;
+  /* Add space between skill cards */
+}
+
+.skill-card h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.projects-card .mat-card-content .project-item {
+  /* Adjusted padding for vertical stacking */
+  flex-shrink: 0;
+  /* Prevent shrinking */
+  margin-right: 20px;
+  /* Add space between project items */
+}
+
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-card ul li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Flip Card Styles */
+.flip-card-container {
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 20px;
+}
+
+.flip-card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--card-background-color);
+  text-align: center;
+  /* Kept for the front content */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Kept for front content */
+  align-items: center;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.flip-card-front {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+
+  background-color: var(--card-background-color);
+  color: black;
+  border-radius: 10px;
+}
+
+.flip-card-front h4 {
+  font-weight: normal;
+}
+
+.flip-card-back {
+  background: linear-gradient(-45deg, #23d5ab, #23a6d5, #e73c7e, #ee7752);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+
+  color: var(--card-background-color);
+  /* Changed to text-color for consistency */
+  transform: rotateY(180deg);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  box-sizing: border-box;
+  z-index: 1;
+  overflow: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flip-card-back ul {
+  list-style: disc;
+  padding: 0 10px 0 20px;
+  margin: 0;
+  color: white;
+  /* Changed to text-color for consistency */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.flip-card-back ul li {
+  margin: 0 0 8px 0;
+  font-size: 0.9em;
+  color: white;
+  /* Changed to text-color for consistency */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.skills-horizontal-container {
+  display: flex;
+  /* Enable Flexbox */
+  flex-wrap: wrap;
+  /* Allow items to wrap to the next line */
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  gap: 20px;
+  /* Add gap between skill cards */
+  padding: 20px;
+  /* Add padding similar to flip-card-container */
+  /* Hide scrollbar for a cleaner look */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.skills-horizontal-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, and Opera */
+}
+
+/* Media query for smaller screens to force horizontal scrolling */
+@media (max-width: 768px) {
+  /* Adjust breakpoint as needed */
+  .skills-horizontal-container {
+    flex-wrap: nowrap;
+    /* Prevent wrapping on small screens */
+  }
+  .skills-horizontal-container .skill-card {
+    width: auto;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-container {
+    padding: 10px;
+    margin: 15px auto;
+  }
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+  .contact-info p {
+    margin: 5px 0;
+    display: block;
+  }
+  h4 {
+    font-size: 1.1em;
+  }
+  .about-me-card .mat-card-content {
+    flex-direction: column;
+    /* Stack content vertically on small screens */
+  }
+  .about-left-section {
+    width: 100%;
+    /* Full width on small screens */
+    padding-right: 0;
+    /* Remove right padding */
+    margin-bottom: 20px;
+    /* Add space between sections */
+  }
+  .about-left-section .about-image {
+    margin-bottom: 10px;
+    /* Adjust space below image */
+  }
+}
+
+.about-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  /* Adjust gap as needed */
+}
+
+.about-left-section {
+  flex-basis: 40%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center items in the left section */
+}
+
+.skills-horizontal-container .skill-card img {
+  width: 1.8em;
+  /* Adjust size as needed */
+  height: 1.8em;
+  /* Adjust size as needed */
+  vertical-align: middle;
+  /* Align icon vertically with text */
+  margin-right: 8px;
+  /* Add space between icon and text */
+}
+
+.about-right-section {
+  flex-grow: 1;
+}
+
+.about-left-section {
+  width: 100%;
+  /* Full width on smaller screens */
+  padding-right: 0;
+  /* Remove right padding */
+}
+
+.skills-horizontal-container .skill-card ul li .material-icons {
+  font-size: 1.5em;
+  /* Adjust size as needed */
+  vertical-align: middle;
+  /* Align icon vertically with text */
+  margin-right: 5px;
+  /* Add space between icon and text */
+}
+
+.skills-horizontal-container .skill-card ul li img {
+  width: 1.5em;
+  /* Adjust size as needed */
+  height: 1.5em;
+  /* Adjust size as needed */
+  vertical-align: middle;
+  /* Align icon vertically with text */
+  margin-right: 8px;
+  /* Adjust space between icon and text */
+}
+
+.skills-horizontal-container .skill-card ul li svg {
+  width: 2em;
+  /* Adjust size as needed */
+  height: 2em;
+  /* Adjust size as needed */
+  vertical-align: middle;
+  /* Align icon vertically with text */
+  margin-right: 5px;
+  /* Add space between icon and text */
+}

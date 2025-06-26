@@ -1,0 +1,181 @@
+/* Add your header styles here */
+
+@keyframes drop {
+ 0% {
+    transform: translateY(-200px);
+ opacity: 0;
+  }
+ 50% {
+ transform: translateY(0px);
+ opacity: 1;
+  }
+ 65% {
+ transform: translateY(-17px);
+ opacity: 1;
+  }
+ 75% {
+ transform: translateY(-22px);
+ opacity: 1;
+  }
+ 100% {
+ transform: translateY(0px);
+ opacity: 1;
+  }
+}
+
+.header-content { /* Add styles for the container */
+ display: flex;
+ justify-content: space-between; /* Space out the title and navigation */
+ align-items: center;
+ padding: 15px 30px; /* Adjust padding */
+ background-color: rgb(212, 212, 235); /* Use card background color */
+ box-shadow: 0 2px 4px rgba(68, 196, 235, 0.1); /* Subtle shadow */
+  border-bottom-left-radius: 10px; /* Rounded corners */
+  border-bottom-right-radius: 10px;
+  flex-wrap: nowrap;
+}
+
+.site-title {
+ font-size: 1.5em;
+ box-shadow: 0 2px 4px rgba(68, 196, 235, 0.1); /* Subtle shadow */
+ border-bottom-left-radius: 10px; /* Rounded corners */
+}
+
+.site-title .key {
+    opacity: 0;
+    animation: drop 0.4s linear forwards;
+    /* animation-delay will be set inline in the HTML */
+}
+
+
+.header-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox for navigation links */
+}
+
+.header-nav li {
+  margin-left: 30px; /* Adjust spacing between links */
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: black; /* Secondary text color for links */
+  font-size: 1em;
+  transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+.header-nav a:hover {
+  color: var(--primary-color); /* Primary color on hover */
+}
+
+/* Styles for the mobile menu toggle button */
+.menu-toggle {
+  display: none; /* Hide by default on larger screens */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: black; /* White color for the lines */
+  display: block;
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  width: 25px;
+  height: 3px;
+ background-color: black;
+  position: absolute;
+  left: 0;
+ transition: transform 0.3s ease-in-out;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Hamburger animation when menu is open */
+.header-nav.open .hamburger {
+  background-color: transparent;
+}
+.header-nav.open .hamburger::before {
+ top: 0;
+ transform: rotate(45deg);
+}
+
+.header-nav.open .hamburger::after {
+ top: 0;
+ transform: rotate(-45deg);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+
+  .menu-toggle {
+    display: block; /* Show the menu toggle button */
+  }
+
+  .header-content {
+ flex-direction: row;
+ justify-content: space-between;
+ padding: 15px;
+  }
+  .header-nav {
+    position: absolute;
+    top: 60px; /* Adjust based on your header height */
+    right: -200px; /* Hide off-screen initially (adjust width as needed) */
+    width: 180px; /* Set the width of the sidebar */
+    height: auto; /* Set height to auto to fit content */
+    background-color: rgb(212, 212, 235); /* Match header background */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow */
+    backdrop-filter: blur(5px); /* Add blur effect */
+    flex-direction: column;
+    align-items: center; /* Center links in the sidebar */
+    padding: 20px 0;
+    overflow-y: auto; /* Add scrolling if links exceed height */
+ transition: right 0.3s ease-in-out; /* Animate sliding */
+  }
+  .header-nav.open {
+    right: 0; /* Slide in when open */
+  border-bottom-left-radius: 10px; /* Rounded corners */
+  border-top-left-radius: 10px;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    width: 100%;
+   padding: 0;
+  }
+
+  .header-nav li {
+    margin: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Add a subtle line separator */
+  }
+
+  .header-nav li:last-child {
+    border-bottom: none; /* Remove border for the last list item */
+  }
+
+  .header-nav a {
+    padding: 8px 15px; /* Add padding for clickable area */
+    display: block; /* Make the link a block element */
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle background for button */
+  border-radius: 5px; /* Slightly rounded corners for buttons */
+    margin: 0 15px 8px 15px; /* Space between buttons and add side margins */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Darker text color for contrast */
+  }
+}
